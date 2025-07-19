@@ -55,7 +55,7 @@ jobs:
     - name: Run tests 
       run: |
         source .env/bin/activate
-        mkdir artifacts
+        # mkdir artifacts
         uv pip install pytest
         python3 test.py 2>&1 > test_output.txt
   
