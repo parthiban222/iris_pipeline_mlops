@@ -1,0 +1,13 @@
+|--- petal_width <= 0.70
+|   |--- class: setosa
+|--- petal_width >  0.70
+|   |--- petal_length <= 4.95
+|   |   |--- petal_width <= 1.65
+|   |   |   |--- class: versicolor
+|   |   |--- petal_width >  1.65
+|   |   |   |--- class: virginica
+|   |--- petal_length >  4.95
+|   |   |--- petal_width <= 1.70
+|   |   |   |--- class: virginica
+|   |   |--- petal_width >  1.70
+|   |   |   |--- class: virginica
