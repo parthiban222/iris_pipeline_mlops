@@ -1,0 +1,13 @@
+project: Feast
+registry: gs://mlops_ga1_bucket/feast/registry.db
+provider: gcp
+entity_key_serialization_version: 2
+
+offline_store:
+  type: bigquery
+  dataset: iris
+
+online_store:
+  type: datastore
+  project_id: ageless-aura-461314-a1
+  namespace: iris_online
