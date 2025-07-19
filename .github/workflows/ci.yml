@@ -44,18 +44,18 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install uv
         uv venv --python 3.12 .env
-        source /home/jupyter/california_housing/.env/bin/activate
+        source .env/bin/activate
         uv pip install feast[gcp] dvc[gs] mlflow
 
     - name: Set up DVC
       run: |
-        source /home/jupyter/california_housing/.env/bin/activate
+        source .env/bin/activate
         dvc pull data
     
     - name: Run tests 
       run: |
-        source /home/jupyter/california_housing/.env/bin/activate
-        mkdir artifacts
+        source .env/bin/activate
+        # mkdir artifacts
         uv pip install pytest
         python3 test.py 2>&1 > test_output.txt
   
@@ -70,4 +70,4 @@ jobs:
         echo "\`\`\`" >> report.md
         cat test_output.txt >> report.md
         echo "\`\`\`" >> report.md
-      cml comment create report.md
+        cml comment create report.md
