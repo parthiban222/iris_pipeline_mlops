@@ -84,6 +84,10 @@ jobs:
           echo "\`\`\`" >> report.md
           cat test_output.txt >> report.md
           echo "\`\`\`" >> report.md
+          echo "## 🛡️ Mitigation Strategy" >> report.md
+          echo "\`\`\`" >> report.md
+          cat artifacts/mitigation.txt >> report.md
+          echo "\`\`\`" >> report.md
       - name: Upload CML report
         uses: actions/upload-artifact@v4
         with:
