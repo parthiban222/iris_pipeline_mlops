@@ -76,7 +76,7 @@ jobs:
           echo "" >> report.md
           echo "| Poison Level | Accuracy | Confusion Matrix (List Format) |" >> report.md
           echo "|--------------|----------|-------------------------------|" >> report.md
-          grep '|' test_output.txt >> report.md
+          grep '|' test_output.txt >> report.md || true
           echo "" >> report.md
           echo "---" >> report.md
           echo "" >> report.md
@@ -84,4 +84,6 @@ jobs:
           echo "\`\`\`" >> report.md
           cat test_output.txt >> report.md
           echo "\`\`\`" >> report.md
-          cml comment create report.md
+
+
+
