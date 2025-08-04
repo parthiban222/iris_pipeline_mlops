@@ -1,13 +1,22 @@
-|--- petal_width <= 0.70
-|   |--- class: setosa
-|--- petal_width >  0.70
-|   |--- petal_length <= 4.95
-|   |   |--- petal_width <= 1.65
+|--- petal_width <= 0.75
+|   |--- sepal_length <= 5.30
+|   |   |--- petal_width <= 0.15
+|   |   |   |--- class: setosa
+|   |   |--- petal_width >  0.15
+|   |   |   |--- class: setosa
+|   |--- sepal_length >  5.30
+|   |   |--- sepal_width <= 3.85
+|   |   |   |--- class: setosa
+|   |   |--- sepal_width >  3.85
+|   |   |   |--- class: setosa
+|--- petal_width >  0.75
+|   |--- petal_width <= 1.75
+|   |   |--- sepal_length <= 4.95
+|   |   |   |--- class: virginica
+|   |   |--- sepal_length >  4.95
 |   |   |   |--- class: versicolor
-|   |   |--- petal_width >  1.65
+|   |--- petal_width >  1.75
+|   |   |--- petal_length <= 6.65
 |   |   |   |--- class: virginica
-|   |--- petal_length >  4.95
-|   |   |--- petal_width <= 1.70
-|   |   |   |--- class: virginica
-|   |   |--- petal_width >  1.70
-|   |   |   |--- class: virginica
+|   |   |--- petal_length >  6.65
+|   |   |   |--- class: setosa
