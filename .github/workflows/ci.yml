@@ -57,6 +57,7 @@ jobs:
           source .env/bin/activate
           uv pip install pytest
           python3 test.py 2>&1 | tee test_output.txt
+          cat test_output.txt
 
       - name: Train Poisoned Model Variants
         run: |
@@ -83,6 +84,10 @@ jobs:
           echo "### Full Test Output" >> report.md
           echo "\`\`\`" >> report.md
           cat test_output.txt >> report.md
+          echo "\`\`\`" >> report.md
+          echo "## 🛡️ Mitigation Strategy" >> report.md
+          echo "\`\`\`" >> report.md
+          cat artifacts/mitigation.txt >> report.md
           echo "\`\`\`" >> report.md
       - name: Upload CML report
         uses: actions/upload-artifact@v4
