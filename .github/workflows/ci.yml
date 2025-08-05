@@ -64,7 +64,10 @@ jobs:
       - name: Train Poisoned Model Variants
         run: |
           source .env/bin/activate
-          python3 train.py > test_output.txt
+          python3 train.py | tee test_output.txt
+
+
+
 
       - name: Setup CML
         uses: iterative/setup-cml@v2
