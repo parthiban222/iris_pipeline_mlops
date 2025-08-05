@@ -66,6 +66,9 @@ jobs:
           source .env/bin/activate
           python3 train.py | tee test_output.txt
 
+
+
+
       - name: Setup CML
         uses: iterative/setup-cml@v2
 
